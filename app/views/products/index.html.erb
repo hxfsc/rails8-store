@@ -1,8 +1,13 @@
 <h1 class="text-xl">商品列表</h1>
 
-<%= link_to "新增商品",
-new_product_path,
-class: "px-3 py-1 text-sm text-gray-500 bg-yellow-500 rounded-full" %>
+<%= if authenticated?
+  link_to "新增商品",
+  new_product_path,
+  class: "px-3 py-1 text-sm text-gray-500 bg-yellow-500 rounded-full"
+end %>
+
+<%= link_to "登录", new_session_path unless authenticated? %>
+
 <div id="products" class="mt-10">
   <% @products.each do |product| %>
     <div>

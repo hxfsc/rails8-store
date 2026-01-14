@@ -24,7 +24,17 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28">
+    <nav class="container mx-auto pt-10 flex gap-5">
+      <%= link_to "首页", root_path %>
+      <%= link_to "登录", new_session_path unless authenticated? %>
+      <%= if authenticated?
+        button_to "退出",
+        session_path,
+        method: :delete,
+        class: "rounded-full px-3 py-1 bg-gray-500 cursor-pointer text-sm text-white"
+      end %>
+    </nav>
+    <main class="container mx-auto mt-8">
       <% if flash[:notice] %>
         <div class="bg-green-500 rounded-full px-3 py-2 text-white">
           <%= notice %>
