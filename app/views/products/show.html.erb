@@ -1,0 +1,23 @@
+<div>
+  <div>
+    名称
+  </div>
+
+  <div>
+    <%= @product.name %>
+  </div>
+
+  <div class="flex gap-2">
+    <%= link_to "返回列表", products_path, class: "rounded-full p-2 px-3 bg-blue-500" %>
+    <%= link_to "编辑",
+    edit_product_path(@product),
+    class: "rounded-full p-2 px-3 bg-green-500" %>
+    <%= button_to "删除",
+    @product,
+    method: :delete,
+    data: {
+      turbo_confirm: "确认删除吗",
+    },
+    class: "rounded-full p-2 px-3 bg-red-500" %>
+  </div>
+</div>
