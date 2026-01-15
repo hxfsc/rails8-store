@@ -6,9 +6,7 @@
   class: "px-3 py-1 text-sm text-gray-500 bg-yellow-500 rounded-full"
 end %>
 
-<%= link_to "登录", new_session_path unless authenticated? %>
-
-<div id="products" class="mt-10">
+<div id="products" class="mt-2">
   <% @products.each do |product| %>
     <div>
       <%= link_to product.name, product_path(product) %>

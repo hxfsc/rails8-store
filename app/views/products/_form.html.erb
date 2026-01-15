@@ -7,7 +7,23 @@
     <%= f.text_field :name, class: "border border-yellow-500 px-5 rounded-full" %>
   </div>
 
+  <div class="mb-5">
+    商品详情:
+    <%= f.rich_textarea :description %>
+  </div>
+
   <div>
+    附件:
+    <%= f.file_field :featured_image, accept: "image/*" %>
+  </div>
+
+  <div>
+    库存:
+    <%= f.number_field :inventory_count %>
+  </div>
+  <div class="flex gap-5">
     <%= f.submit "保存", class: "cursor-pointer rounded-full px-3 py-1 bg-yellow-500" %>
+
+    <%= link_to "返回列表", products_path, class: "rounded-full px-3 py-1 bg-green-500" %>
   </div>
 <% end %>
