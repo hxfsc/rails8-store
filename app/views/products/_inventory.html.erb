@@ -1,0 +1,17 @@
+<% if product.inventory_count.positive? %>
+  <p><%= product.inventory_count %>
+    in stock</p>
+<% else %>
+  <p>Out of stock</p>
+  <p>Email me when available.</p>
+
+  <%= form_with model: [product, Subscriber.new] do |form| %>
+    <%= form.email_field :email,
+                     class: "border-2 px-3 py-1 border-green-500 rounded-full",
+                     placeholder: "you@example.com",
+                     required: true %>
+    <%= form.submit "订阅",
+                class:
+                  "rounded-full px-3 border-2 border-green-500 text-white py-1 text-medium cursor-pointer bg-green-500" %>
+  <% end %>
+<% end %>
