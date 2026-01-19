@@ -26,13 +26,19 @@
   <body>
     <nav class="container mx-auto pt-10 flex gap-5">
       <%= link_to "首页", root_path %>
-      <%= link_to "登录", new_session_path unless authenticated? %>
-      <%= if authenticated?
-        button_to "退出",
+
+      <% if authenticated? %>
+
+        <%= link_to "设置", settings_root_path %>
+        <%= button_to "退出",
         session_path,
         method: :delete,
-        class: "rounded-full px-3 py-1 bg-gray-500 cursor-pointer text-sm text-white"
-      end %>
+        class: "rounded-full px-3 py-1 bg-gray-500 cursor-pointer text-sm text-white" %>
+
+      <% else %>
+        <%= link_to "注册", sign_up_path %>
+        <%= link_to "登录", new_session_path %>
+      <% end %>
     </nav>
 
     <main class="container mx-auto mt-8">
@@ -41,7 +47,8 @@
           <%= notice %>
         </div>
       <% end %>
-      <%= yield %>
+
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
 </html>
