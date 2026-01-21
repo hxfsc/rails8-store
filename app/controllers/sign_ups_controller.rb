@@ -4,6 +4,8 @@ class SignUpsController < ApplicationController
   rate_limit to: 10, within: 3.minutes, only: :create, with: -> {
     redirect_to sign_up_path, alert: "请稍后再试"
   }
+
+
   def  show
     @user = User.new
   end
@@ -25,6 +27,6 @@ class SignUpsController < ApplicationController
   private
     def sign_up_params
      params.expect(user: %w[first_name last_name email_address password passswor_confirmation])
-  end
-  
+    end
+ 
 end

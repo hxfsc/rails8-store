@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+  <div>
+    <%= link_to user.full_name, store_user_path(user) %>
+  </div>
+<% end %>

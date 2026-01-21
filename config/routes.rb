@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     resource :email, only: %w[show update]
     root to: redirect("settings/profile")
   end
+
+
+  namespace :store do 
+    resources :users
+  end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

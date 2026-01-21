@@ -1,8 +1,8 @@
-<h1>Account</h1>
-
-<%= button_to "Delete my account",
+<%= button_to "删除当前帐户",
 settings_user_path,
 method: :delete,
+class:
+  "bg-blue-500 px-3 py-1 rounded-full mt-10 text-white text-sm cursor-pointer",
 data: {
   turbo_confirm: "Are you sure? This cannot be undone.",
 } %>

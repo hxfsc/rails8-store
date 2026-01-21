@@ -6,6 +6,11 @@ class Settings::ProfilesController < Settings::BaseController
 
 
     def update
+      if Current.user.update profile_params
+        redirect_to settings_profile_path, notice: "姓名更新成功"
+      else 
+        render :show
+      end
 
     end
 

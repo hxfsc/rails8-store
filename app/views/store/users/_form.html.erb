@@ -1,0 +1,32 @@
+<%= form_with model: [ :store, user ] do |form| %>
+  <div class="mb-5">
+    <%= form.label :first_name, class: "inline-block w-[90px]" %>
+    <%= form.text_field :first_name,
+                    required: true,
+                    autofocus: true,
+                    autocomplete: "given-name",
+                    class: "border-2 border-gray-500 rounded-full px-3 py-1" %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :last_name, class: "inline-block w-[90px]" %>
+    <%= form.text_field :last_name,
+                    required: true,
+                    class: "border-2 border-gray-600 rounded-full px-3 py-1",
+                    autocomplete: "family-name" %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :email_address, class: "inline-block w-[90px]" %>
+    <%= form.email_field :email_address,
+                     required: true,
+                     class: "border-2 border-gray-600 rounded-full px-3 py-1",
+                     autocomplete: "email" %>
+  </div>
+
+  <div>
+    <%= form.submit "更新",
+                class:
+                  "rounded-full px-4 py-2 bg-green-500 cursor-pointer text-white" %>
+  </div>
+<% end %>

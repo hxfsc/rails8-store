@@ -1,4 +1,3 @@
-<h1 class="mb-5">重设密码</h1>
 <%= form_with model: Current.user, url: settings_password_path do |form| %>
   <% if form.object.errors.any? %>
     <div><%= form.object.errors.full_messages.first %></div>

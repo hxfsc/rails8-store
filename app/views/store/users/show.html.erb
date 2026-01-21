@@ -1,0 +1,13 @@
+<div>
+  姓名:
+  <%= @user.full_name %>
+</div>
+<div>
+  邮箱:
+  <%= @user.email_address %>
+</div>
+
+<div class="flex gap-5">
+  <%= link_to "编辑", edit_store_user_path(@user) %>
+  <%= link_to "删除", store_user_path(@user), method: :delete %>
+</div>
