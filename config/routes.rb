@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :products do
 
       resources :subscribers, only: [:create]
+      resource :wishlist, only: [:create], module: :products
   end
 
   resource :sign_up
