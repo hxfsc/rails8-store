@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   end
 
 
-  namespace :store do 
+  namespace :store do
+    resources :products
     resources :users
   end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

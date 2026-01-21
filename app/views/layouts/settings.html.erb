@@ -15,6 +15,9 @@
       class: "bg-pink-300 rounded-full px-3 py-1 text-white" %>
 
       <% if Current.user.admin? %>
+        <%= link_to "产品列表",
+        store_products_path,
+        class: "bg-yellow-500 rounded-full px-3 py-1 text-white" %>
         <%= link_to "用户列表",
         store_users_path,
         class: "bg-red-500 rounded-full px-3 py-1 text-white" %>
