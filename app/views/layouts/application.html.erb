@@ -28,7 +28,7 @@
       <%= link_to "首页", root_path %>
 
       <% if authenticated? %>
-
+        <%= link_to "心愿单", wishlists_path %>
         <%= link_to "设置", settings_root_path %>
         <%= button_to "退出",
         session_path,

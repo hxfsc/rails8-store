@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resource :wishlist, only: [:create], module: :products
   end
 
+
+  resources :wishlists
   resource :sign_up
   
   namespace :settings do

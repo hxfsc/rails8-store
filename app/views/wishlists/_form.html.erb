@@ -1,0 +1,19 @@
+<%= form_with model: @wishlist do |form| %>
+  <% if form.object.errors.any? %>
+    <div><%= form.object.errors.full_messages.to_sentence %></div>
+  <% end %>
+
+  <div>
+    心愿单名称:
+    <%= form.text_field :name, class: "rounded-full border-2 border-green-500 px-3 py-2" %>
+  </div>
+
+  <div class="flex gap-5">
+    <%= form.submit "保存",
+                class:
+                  "cursor-pointer rounded-full bg-green-400 text-white px-3 py-1" %>
+    <%= link_to "返回",
+    form.object.persisted? ? form.object : wishlists_path,
+    class: "cursor-pointer rounded-full bg-blue-500 text-white px-3 py-1" %>
+  </div>
+<% end %>

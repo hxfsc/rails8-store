@@ -1,0 +1,9 @@
+<h3>我的心愿单</h3>
+
+<%= link_to "新建心愿单",
+new_wishlist_path,
+class: "rounded-full bg-green-500 px-3 py-1 text-white text-sm" %>
+
+<div class="mt-5">
+  <%= render @wishlists %>
+</div>
